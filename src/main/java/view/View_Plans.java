@@ -5,6 +5,7 @@
  */
 package view;
 import control.MainClass;
+import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
 import utility.Person;
 import utility.Plan;
@@ -95,6 +96,18 @@ public class View_Plans extends javax.swing.JFrame {
 
         jLabel10.setText("tipo");
 
+        boxId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxIdKeyTyped(evt);
+            }
+        });
+
+        boxCode.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxCodeKeyTyped(evt);
+            }
+        });
+
         jLabel3.setText("code");
 
         jLabel4.setText("nombre");
@@ -105,6 +118,11 @@ public class View_Plans extends javax.swing.JFrame {
         listType.setEnabled(false);
 
         boxAge.setEnabled(false);
+        boxAge.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxAgeKeyTyped(evt);
+            }
+        });
 
         jLabel6.setText("id");
 
@@ -137,6 +155,11 @@ public class View_Plans extends javax.swing.JFrame {
         });
 
         boxName.setEnabled(false);
+        boxName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxNameKeyTyped(evt);
+            }
+        });
 
         boxBill.setEditable(false);
         boxBill.setColumns(20);
@@ -355,6 +378,61 @@ public class View_Plans extends javax.swing.JFrame {
         buttonEnd.setEnabled(true);
         buttonSell.setEnabled(false);
     }//GEN-LAST:event_buttonSellActionPerformed
+
+    private void boxNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxNameKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+        boolean backSpace = key == 8;
+            
+        if (!(minusculas || mayusculas || espacio || backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Alfabéticos");
+           
+        }
+    }//GEN-LAST:event_boxNameKeyTyped
+
+    private void boxCodeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxCodeKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+        boolean backSpace = key == 8;
+        
+        if (!(numeros||backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Numéricos");
+        }
+    }//GEN-LAST:event_boxCodeKeyTyped
+
+    private void boxIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxIdKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+        boolean backSpace = key == 8;
+        
+        if (!(numeros||backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Numéricos");
+        }
+    }//GEN-LAST:event_boxIdKeyTyped
+
+    private void boxAgeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxAgeKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+        boolean backSpace = key == 8;
+        
+        if (!(numeros||backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Numéricos");
+        }
+    }//GEN-LAST:event_boxAgeKeyTyped
 
     /**
      * @param args the command line arguments

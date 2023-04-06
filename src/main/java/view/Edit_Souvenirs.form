@@ -178,6 +178,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="boxNewCode">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxNewCodeKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="buttonEdit">
       <Properties>
@@ -188,6 +191,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="boxNewPrice">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxNewPriceKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="buttonDelete">
       <Properties>
@@ -198,6 +204,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="boxNewDescription">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxNewDescriptionKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
@@ -215,8 +224,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="boxEditCode">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxEditCodeKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="boxEditPrice">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxEditPriceKeyTyped"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
@@ -242,6 +257,7 @@
     <Component class="javax.swing.JTextField" name="boxEditDescription">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boxEditDescriptionActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxEditDescriptionKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
@@ -250,6 +266,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="boxDeleteCode">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxDeleteCodeKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>

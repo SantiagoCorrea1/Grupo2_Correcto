@@ -6,6 +6,7 @@
 package view;
 import utility.SavageAnimal;
 import control.MainClass;
+import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
 /**
  *
@@ -115,6 +116,23 @@ public class Edit_SavageAnimals extends javax.swing.JFrame {
                 boxCodeActionPerformed(evt);
             }
         });
+        boxCode.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxCodeKeyTyped(evt);
+            }
+        });
+
+        boxName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxNameKeyTyped(evt);
+            }
+        });
+
+        boxType.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxTypeKeyTyped(evt);
+            }
+        });
 
         buttonEdit.setText("Editar");
         buttonEdit.addActionListener(new java.awt.event.ActionListener() {
@@ -153,6 +171,11 @@ public class Edit_SavageAnimals extends javax.swing.JFrame {
                 boxCodeDeleteActionPerformed(evt);
             }
         });
+        boxCodeDelete.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxCodeDeleteKeyTyped(evt);
+            }
+        });
 
         jLabel4.setText("Peso");
 
@@ -165,12 +188,34 @@ public class Edit_SavageAnimals extends javax.swing.JFrame {
                 boxWeigthActionPerformed(evt);
             }
         });
+        boxWeigth.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxWeigthKeyTyped(evt);
+            }
+        });
+
+        boxSpecies.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxSpeciesKeyTyped(evt);
+            }
+        });
+
+        boxHabitat.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxHabitatKeyTyped(evt);
+            }
+        });
 
         jLabel9.setText("Código");
 
         boxDangerLevel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boxDangerLevelActionPerformed(evt);
+            }
+        });
+        boxDangerLevel.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxDangerLevelKeyTyped(evt);
             }
         });
 
@@ -185,10 +230,26 @@ public class Edit_SavageAnimals extends javax.swing.JFrame {
                 boxEditDangerousLevelActionPerformed(evt);
             }
         });
+        boxEditDangerousLevel.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxEditDangerousLevelKeyTyped(evt);
+            }
+        });
 
         boxCodeEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boxCodeEditActionPerformed(evt);
+            }
+        });
+        boxCodeEdit.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxCodeEditKeyTyped(evt);
+            }
+        });
+
+        boxEditName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxEditNameKeyTyped(evt);
             }
         });
 
@@ -197,6 +258,11 @@ public class Edit_SavageAnimals extends javax.swing.JFrame {
         boxEditWeigth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boxEditWeigthActionPerformed(evt);
+            }
+        });
+        boxEditWeigth.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxEditWeigthKeyTyped(evt);
             }
         });
 
@@ -210,73 +276,76 @@ public class Edit_SavageAnimals extends javax.swing.JFrame {
                 .addGap(38, 38, 38))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(21, 21, 21)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jLabel2)
-                                                    .addComponent(jLabel3)
-                                                    .addComponent(jLabel9)
-                                                    .addComponent(jLabel4))
-                                                .addGap(44, 44, 44)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(boxCode)
-                                                    .addComponent(boxName, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(82, 82, 82)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(boxWeigth)
-                                                    .addComponent(boxType, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGap(22, 22, 22)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(82, 82, 82)
-                                                .addComponent(boxSpecies, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addComponent(jLabel8)
-                                                        .addGap(22, 22, 22))
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addComponent(jLabel7)
-                                                        .addGap(21, 21, 21)))
-                                                .addGap(23, 23, 23)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(boxDangerLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(boxHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(buttonAdd)))))
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addGap(38, 38, 38)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel13)
-                                    .addComponent(jLabel14)
-                                    .addComponent(jLabel10))
-                                .addGap(44, 44, 44)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(boxCodeEdit)
-                                            .addComponent(boxEditName, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(40, 40, 40)
-                                        .addComponent(jLabel6))
-                                    .addComponent(boxEditWeigth, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(boxEditDangerousLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(buttonEdit))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(boxCodeDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(buttonDelete)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(128, 128, 128)
+                                            .addComponent(buttonAdd)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addGap(41, 41, 41)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(jLabel2)
+                                                        .addComponent(jLabel3)
+                                                        .addComponent(jLabel9)
+                                                        .addComponent(jLabel4))
+                                                    .addGap(44, 44, 44)
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(boxCode)
+                                                        .addComponent(boxName, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addGap(82, 82, 82)
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(boxWeigth)
+                                                        .addComponent(boxType, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addGap(38, 38, 38)))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel11)
+                                        .addComponent(jLabel13)
+                                        .addComponent(jLabel14)
+                                        .addComponent(jLabel10))
+                                    .addGap(44, 44, 44))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(19, 19, 19)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addGap(22, 22, 22)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jLabel8)
+                                                    .addGap(22, 22, 22))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jLabel7)
+                                                    .addGap(21, 21, 21)))
+                                            .addGap(23, 23, 23)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(boxDangerLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(boxHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(boxSpecies, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(boxCodeEdit)
+                                        .addComponent(boxEditName, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(40, 40, 40)
+                                    .addComponent(jLabel6))
+                                .addComponent(boxEditWeigth, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(boxEditDangerousLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buttonEdit))
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(boxCodeDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buttonDelete)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(32, 32, 32)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(229, 229, 229)
                         .addComponent(jLabel5)))
@@ -418,6 +487,183 @@ public class Edit_SavageAnimals extends javax.swing.JFrame {
         mainClass.getDptLogistic().deleteAnimal(boxCodeDelete.getText(), "salvaje");
         setNull();
     }//GEN-LAST:event_buttonDeleteActionPerformed
+
+    private void boxNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxNameKeyTyped
+        // TODO add your handling code here:
+         int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+        boolean backSpace = key == 8;
+            
+        if (!(minusculas || mayusculas || espacio || backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Alfabéticos");
+           
+        }
+    }//GEN-LAST:event_boxNameKeyTyped
+
+    private void boxTypeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxTypeKeyTyped
+        // TODO add your handling code here:
+         int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+        boolean backSpace = key == 8;
+            
+        if (!(minusculas || mayusculas || espacio || backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Alfabéticos");
+           
+        }
+    }//GEN-LAST:event_boxTypeKeyTyped
+
+    private void boxSpeciesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxSpeciesKeyTyped
+        // TODO add your handling code here:
+         int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+        boolean backSpace = key == 8;
+            
+        if (!(minusculas || mayusculas || espacio || backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Alfabéticos");
+           
+        }
+    }//GEN-LAST:event_boxSpeciesKeyTyped
+
+    private void boxHabitatKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxHabitatKeyTyped
+        // TODO add your handling code here:
+         int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+        boolean backSpace = key == 8;
+            
+        if (!(minusculas || mayusculas || espacio || backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Alfabéticos");
+           
+        }
+    }//GEN-LAST:event_boxHabitatKeyTyped
+
+    private void boxDangerLevelKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxDangerLevelKeyTyped
+        // TODO add your handling code here:
+         int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+        boolean backSpace = key == 8;
+            
+        if (!(minusculas || mayusculas || espacio || backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Alfabéticos");
+           
+        }
+    }//GEN-LAST:event_boxDangerLevelKeyTyped
+
+    private void boxEditNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxEditNameKeyTyped
+        // TODO add your handling code here:
+         int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+        boolean backSpace = key == 8;
+            
+        if (!(minusculas || mayusculas || espacio || backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Alfabéticos");
+           
+        }
+    }//GEN-LAST:event_boxEditNameKeyTyped
+
+    private void boxEditDangerousLevelKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxEditDangerousLevelKeyTyped
+        // TODO add your handling code here:
+         int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+        boolean backSpace = key == 8;
+            
+        if (!(minusculas || mayusculas || espacio || backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Alfabéticos");
+           
+        }
+    }//GEN-LAST:event_boxEditDangerousLevelKeyTyped
+
+    private void boxCodeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxCodeKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+        boolean backSpace = key == 8;
+        
+        if (!(numeros||backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Numéricos");
+        }
+    }//GEN-LAST:event_boxCodeKeyTyped
+
+    private void boxWeigthKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxWeigthKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+        boolean backSpace = key == 8;
+        
+        if (!(numeros||backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Numéricos");
+        }
+    }//GEN-LAST:event_boxWeigthKeyTyped
+
+    private void boxEditWeigthKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxEditWeigthKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+        boolean backSpace = key == 8;
+        
+        if (!(numeros||backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Numéricos");
+        }
+    }//GEN-LAST:event_boxEditWeigthKeyTyped
+
+    private void boxCodeEditKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxCodeEditKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+        boolean backSpace = key == 8;
+        
+        if (!(numeros||backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Numéricos");
+        }
+    }//GEN-LAST:event_boxCodeEditKeyTyped
+
+    private void boxCodeDeleteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxCodeDeleteKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+        boolean backSpace = key == 8;
+        
+        if (!(numeros||backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Numéricos");
+        }
+    }//GEN-LAST:event_boxCodeDeleteKeyTyped
 
     /**
      * @param args the command line arguments

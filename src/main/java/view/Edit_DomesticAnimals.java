@@ -5,6 +5,7 @@
  */
 package view;
 import control.MainClass;
+import javax.swing.JOptionPane;
 import utility.DomesticAnimal;
 import static javax.swing.JOptionPane.showMessageDialog;
 /**
@@ -100,6 +101,17 @@ public class Edit_DomesticAnimals extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        boxEditName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxEditNameActionPerformed(evt);
+            }
+        });
+        boxEditName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxEditNameKeyTyped(evt);
+            }
+        });
+
         buttonBack.setText("Regresar");
         buttonBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,12 +126,34 @@ public class Edit_DomesticAnimals extends javax.swing.JFrame {
                 boxCodeActionPerformed(evt);
             }
         });
+        boxCode.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxCodeKeyTyped(evt);
+            }
+        });
 
         jLabel16.setText("Amabilidad");
+
+        boxName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxNameKeyTyped(evt);
+            }
+        });
 
         boxEditWeigth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boxEditWeigthActionPerformed(evt);
+            }
+        });
+        boxEditWeigth.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxEditWeigthKeyTyped(evt);
+            }
+        });
+
+        boxType.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxTypeKeyTyped(evt);
             }
         });
 
@@ -132,6 +166,12 @@ public class Edit_DomesticAnimals extends javax.swing.JFrame {
         boxWeigth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boxWeigthActionPerformed(evt);
+            }
+        });
+
+        boxSpecies.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxSpeciesKeyTyped(evt);
             }
         });
 
@@ -160,6 +200,12 @@ public class Edit_DomesticAnimals extends javax.swing.JFrame {
 
         jLabel3.setText("Tipo");
 
+        boxKidness.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxKidnessKeyTyped(evt);
+            }
+        });
+
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel5.setText("Animales Domesticos");
 
@@ -172,14 +218,38 @@ public class Edit_DomesticAnimals extends javax.swing.JFrame {
                 boxCodeDeleteActionPerformed(evt);
             }
         });
+        boxCodeDelete.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxCodeDeleteKeyTyped(evt);
+            }
+        });
 
         jLabel11.setText("Nombre");
+
+        boxEditKidness.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxEditKidnessActionPerformed(evt);
+            }
+        });
+        boxEditKidness.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxEditKidnessKeyTyped(evt);
+            }
+        });
 
         jLabel13.setText("Código");
 
         boxCodeEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boxCodeEditActionPerformed(evt);
+            }
+        });
+        boxCodeEdit.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                boxCodeEditKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxCodeEditKeyTyped(evt);
             }
         });
 
@@ -202,7 +272,10 @@ public class Edit_DomesticAnimals extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(jLabel2)
                                             .addComponent(jLabel3)
-                                            .addComponent(jLabel9))
+                                            .addComponent(jLabel9)
+                                            .addComponent(jLabel4)
+                                            .addComponent(jLabel7)
+                                            .addComponent(jLabel8))
                                         .addGap(44, 44, 44)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(boxCode, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
@@ -213,22 +286,14 @@ public class Edit_DomesticAnimals extends javax.swing.JFrame {
                                                 .addComponent(buttonAdd)
                                                 .addGap(48, 48, 48))
                                             .addGroup(layout.createSequentialGroup()
+                                                .addGap(97, 97, 97)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(boxType, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(layout.createSequentialGroup()
-                                                            .addComponent(jLabel4)
-                                                            .addGap(131, 131, 131))
-                                                        .addGroup(layout.createSequentialGroup()
-                                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                .addComponent(jLabel7)
-                                                                .addComponent(jLabel8))
-                                                            .addGap(31, 31, 31)
-                                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                .addComponent(boxKidness, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                                    .addComponent(boxWeigth, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
-                                                                    .addComponent(boxSpecies)))))
-                                                    .addComponent(boxType, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addComponent(boxKidness, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                            .addComponent(boxWeigth, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                                                            .addComponent(boxSpecies))))
                                                 .addGap(46, 46, 46)))
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addGroup(layout.createSequentialGroup()
@@ -259,7 +324,7 @@ public class Edit_DomesticAnimals extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(229, 229, 229)
                         .addComponent(jLabel5)))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -391,6 +456,170 @@ public class Edit_DomesticAnimals extends javax.swing.JFrame {
         setNull();
     }//GEN-LAST:event_buttonDeleteActionPerformed
 
+    private void boxCodeDeleteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxCodeDeleteKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+        boolean backSpace = key == 8;
+        
+        if (!(numeros||backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Numéricos");
+        }
+
+    }//GEN-LAST:event_boxCodeDeleteKeyTyped
+
+    private void boxCodeEditKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxCodeEditKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+        boolean backSpace = key == 8;
+        
+        if (!(numeros||backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Numéricos");
+        }
+
+    }//GEN-LAST:event_boxCodeEditKeyTyped
+
+    private void boxEditNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxEditNameKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+        boolean backSpace = key == 8;
+            
+        if (!(minusculas || mayusculas || espacio || backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Alfabéticos");
+           
+        }
+    }//GEN-LAST:event_boxEditNameKeyTyped
+
+    private void boxCodeEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxCodeEditKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boxCodeEditKeyPressed
+
+    private void boxEditKidnessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxEditKidnessActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boxEditKidnessActionPerformed
+
+    private void boxEditNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxEditNameActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_boxEditNameActionPerformed
+
+    private void boxEditWeigthKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxEditWeigthKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+        boolean backSpace = key == 8;
+        
+        if (!(numeros||backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Numéricos");
+        }
+
+    }//GEN-LAST:event_boxEditWeigthKeyTyped
+
+    private void boxEditKidnessKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxEditKidnessKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+        boolean backSpace = key == 8;
+            
+        if (!(minusculas || mayusculas || espacio || backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Alfabéticos");
+           
+        }
+    }//GEN-LAST:event_boxEditKidnessKeyTyped
+
+    private void boxCodeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxCodeKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+        boolean backSpace = key == 8;
+        
+        if (!(numeros||backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Numéricos");
+        }
+    }//GEN-LAST:event_boxCodeKeyTyped
+
+    private void boxNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxNameKeyTyped
+        // TODO add your handling code here:
+         int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+        boolean backSpace = key == 8;
+            
+        if (!(minusculas || mayusculas || espacio || backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Alfabéticos");
+           
+        }
+    }//GEN-LAST:event_boxNameKeyTyped
+
+    private void boxTypeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxTypeKeyTyped
+        // TODO add your handling code here:
+         int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+        boolean backSpace = key == 8;
+            
+        if (!(minusculas || mayusculas || espacio || backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Alfabéticos");
+           
+        }
+    }//GEN-LAST:event_boxTypeKeyTyped
+
+    private void boxSpeciesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxSpeciesKeyTyped
+        // TODO add your handling code here:
+         int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+        boolean backSpace = key == 8;
+            
+        if (!(minusculas || mayusculas || espacio || backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Alfabéticos");
+           
+        }
+    }//GEN-LAST:event_boxSpeciesKeyTyped
+
+    private void boxKidnessKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxKidnessKeyTyped
+        // TODO add your handling code here:
+         int key = evt.getKeyChar();
+
+        boolean mayusculas = key >= 65 && key <= 90;
+        boolean minusculas = key >= 97 && key <= 122;
+        boolean espacio = key == 32;
+        boolean backSpace = key == 8;
+            
+        if (!(minusculas || mayusculas || espacio || backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Alfabéticos");
+           
+        }
+    }//GEN-LAST:event_boxKidnessKeyTyped
+                                                                  
     /**
      * @param args the command line arguments
      */

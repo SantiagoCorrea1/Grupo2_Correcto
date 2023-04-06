@@ -7,6 +7,7 @@ package view;
 
 import utility.Souvenir;
 import control.MainClass;
+import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
 /**
  *
@@ -91,6 +92,18 @@ public class View_Souvenirs extends javax.swing.JFrame {
         });
 
         jLabel2.setText("Cantidad");
+
+        boxCode.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxCodeKeyTyped(evt);
+            }
+        });
+
+        boxAmount.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxAmountKeyTyped(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel5.setText("Ver Souvenirs");
@@ -261,6 +274,32 @@ public class View_Souvenirs extends javax.swing.JFrame {
         boxAmount.setEnabled(true);
         boxCode.setEnabled(true);
     }//GEN-LAST:event_buttonCancelActionPerformed
+
+    private void boxCodeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxCodeKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+        boolean backSpace = key == 8;
+        
+        if (!(numeros||backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Numéricos");
+        }
+    }//GEN-LAST:event_boxCodeKeyTyped
+
+    private void boxAmountKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxAmountKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+        boolean backSpace = key == 8;
+        
+        if (!(numeros||backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Numéricos");
+        }
+    }//GEN-LAST:event_boxAmountKeyTyped
 
     /**
      * @param args the command line arguments

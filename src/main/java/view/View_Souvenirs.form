@@ -163,8 +163,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="boxCode">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxCodeKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="boxAmount">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxAmountKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>

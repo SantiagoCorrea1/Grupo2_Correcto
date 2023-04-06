@@ -308,6 +308,9 @@
       </SubComponents>
     </Container>
     <Component class="javax.swing.JTextField" name="boxEditName">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxEditNameKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="buttonBack">
       <Properties>
@@ -330,18 +333,29 @@
     <Component class="javax.swing.JTextField" name="boxCode">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boxCodeActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxCodeKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="boxName">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxNameKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="boxEditWeigth">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boxEditWeigthActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxEditWeigthKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="boxType">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxTypeKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="boxEdituse">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxEdituseKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
@@ -361,9 +375,13 @@
     <Component class="javax.swing.JTextField" name="boxWeigth">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boxWeigthActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxWeigthKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="boxUse">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxUseKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="buttonEdit">
       <Properties>
@@ -405,6 +423,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="boxHabitat">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxHabitatKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
@@ -422,6 +443,7 @@
     <Component class="javax.swing.JTextField" name="boxVulgarName">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boxVulgarNameActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxVulgarNameKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
@@ -437,6 +459,7 @@
     <Component class="javax.swing.JTextField" name="boxCodeDelete">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boxCodeDeleteActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxCodeDeleteKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel11">
@@ -452,11 +475,13 @@
     <Component class="javax.swing.JTextField" name="boxEditVulgarName">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boxEditVulgarNameActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxEditVulgarNameKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="boxCodeEdit">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boxCodeEditActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxCodeEditKeyTyped"/>
       </Events>
     </Component>
   </SubComponents>

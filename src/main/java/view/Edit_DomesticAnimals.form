@@ -40,6 +40,9 @@
                                           <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel9" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -54,28 +57,16 @@
                                               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace min="131" pref="131" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Group type="103" groupAlignment="0" attributes="0">
-                                                              <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                                          <Group type="103" groupAlignment="0" attributes="0">
-                                                              <Component id="boxKidness" min="-2" pref="85" max="-2" attributes="0"/>
-                                                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                                  <Component id="boxWeigth" alignment="0" pref="87" max="32767" attributes="0"/>
-                                                                  <Component id="boxSpecies" alignment="0" max="32767" attributes="0"/>
-                                                              </Group>
-                                                          </Group>
+                                                  <Component id="boxType" min="-2" pref="87" max="-2" attributes="0"/>
+                                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                                      <Component id="boxKidness" min="-2" pref="85" max="-2" attributes="0"/>
+                                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                                          <Component id="boxWeigth" alignment="0" pref="87" max="32767" attributes="0"/>
+                                                          <Component id="boxSpecies" alignment="0" max="32767" attributes="0"/>
                                                       </Group>
                                                   </Group>
-                                                  <Component id="boxType" min="-2" pref="87" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                                           </Group>
@@ -124,7 +115,7 @@
                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="33" max="32767" attributes="0"/>
+              <EmptySpace pref="18" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -284,6 +275,10 @@
       </SubComponents>
     </Container>
     <Component class="javax.swing.JTextField" name="boxEditName">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boxEditNameActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxEditNameKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="buttonBack">
       <Properties>
@@ -301,6 +296,7 @@
     <Component class="javax.swing.JTextField" name="boxCode">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boxCodeActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxCodeKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel16">
@@ -309,13 +305,20 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="boxName">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxNameKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="boxEditWeigth">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boxEditWeigthActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxEditWeigthKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="boxType">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxTypeKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
@@ -338,6 +341,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="boxSpecies">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxSpeciesKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="buttonEdit">
       <Properties>
@@ -374,6 +380,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="boxKidness">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxKidnessKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
@@ -396,6 +405,7 @@
     <Component class="javax.swing.JTextField" name="boxCodeDelete">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boxCodeDeleteActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxCodeDeleteKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel11">
@@ -404,6 +414,10 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="boxEditKidness">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boxEditKidnessActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxEditKidnessKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel13">
       <Properties>
@@ -413,6 +427,8 @@
     <Component class="javax.swing.JTextField" name="boxCodeEdit">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boxCodeEditActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxCodeEditKeyPressed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="boxCodeEditKeyTyped"/>
       </Events>
     </Component>
   </SubComponents>

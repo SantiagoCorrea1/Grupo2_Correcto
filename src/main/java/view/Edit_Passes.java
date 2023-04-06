@@ -6,6 +6,7 @@
 package view;
 
 import control.MainClass;
+import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
 import utility.Pass;
 
@@ -94,6 +95,12 @@ public class Edit_Passes extends javax.swing.JFrame {
 
         jLabel2.setText("Precio");
 
+        boxEditAmount.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxEditAmountKeyTyped(evt);
+            }
+        });
+
         jLabel3.setText("cant entradas");
 
         jLabel8.setText("Código");
@@ -105,10 +112,33 @@ public class Edit_Passes extends javax.swing.JFrame {
             }
         });
 
+        boxDeleteCode.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxDeleteCodeKeyTyped(evt);
+            }
+        });
+
+        boxNewCode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxNewCodeActionPerformed(evt);
+            }
+        });
+        boxNewCode.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxNewCodeKeyTyped(evt);
+            }
+        });
+
         buttonEdit.setText("Editar");
         buttonEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonEditActionPerformed(evt);
+            }
+        });
+
+        boxNewPrice.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxNewPriceKeyTyped(evt);
             }
         });
 
@@ -119,13 +149,31 @@ public class Edit_Passes extends javax.swing.JFrame {
             }
         });
 
+        boxNewAmount.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxNewAmountKeyTyped(evt);
+            }
+        });
+
         jLabel4.setText("Código");
 
         jLabel6.setText("Precio");
 
         jLabel7.setText("cant entraas");
 
+        boxEditCode.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxEditCodeKeyTyped(evt);
+            }
+        });
+
         jLabel1.setText("Código");
+
+        boxEditPrice.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxEditPriceKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -284,6 +332,102 @@ public class Edit_Passes extends javax.swing.JFrame {
         }
         setNull();
     }//GEN-LAST:event_buttonDeleteActionPerformed
+
+    private void boxNewCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxNewCodeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boxNewCodeActionPerformed
+
+    private void boxNewCodeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxNewCodeKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+        boolean backSpace = key == 8;
+        
+        if (!(numeros||backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Numéricos");
+        }
+
+    }//GEN-LAST:event_boxNewCodeKeyTyped
+
+    private void boxNewPriceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxNewPriceKeyTyped
+        // TODO add your handling code here:int key = evt.getKeyChar();
+        int key = evt.getKeyChar();
+        
+        boolean numeros = key >= 48 && key <= 57;
+        boolean backSpace = key == 8;
+        
+        if (!(numeros||backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Numéricos");
+        }
+    }//GEN-LAST:event_boxNewPriceKeyTyped
+
+    private void boxNewAmountKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxNewAmountKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+        boolean backSpace = key == 8;
+        
+        if (!(numeros||backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Numéricos");
+        }
+    }//GEN-LAST:event_boxNewAmountKeyTyped
+
+    private void boxEditCodeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxEditCodeKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+        boolean backSpace = key == 8;
+        
+        if (!(numeros||backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Numéricos");
+        }
+    }//GEN-LAST:event_boxEditCodeKeyTyped
+
+    private void boxEditPriceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxEditPriceKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+        boolean backSpace = key == 8;
+        
+        if (!(numeros||backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Numéricos");
+        }
+    }//GEN-LAST:event_boxEditPriceKeyTyped
+
+    private void boxEditAmountKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxEditAmountKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+        boolean backSpace = key == 8;
+        
+        if (!(numeros||backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Numéricos");
+        }
+    }//GEN-LAST:event_boxEditAmountKeyTyped
+
+    private void boxDeleteCodeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxDeleteCodeKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+
+        boolean numeros = key >= 48 && key <= 57;
+        boolean backSpace = key == 8;
+        
+        if (!(numeros||backSpace)){
+           evt.consume();
+           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Numéricos");
+        }
+    }//GEN-LAST:event_boxDeleteCodeKeyTyped
 
     /**
      * @param args the command line arguments
