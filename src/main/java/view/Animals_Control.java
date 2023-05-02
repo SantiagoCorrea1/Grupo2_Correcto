@@ -36,90 +36,97 @@ public class Animals_Control extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonEditAnimals = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        buttonBack = new javax.swing.JButton();
+        buttonEditAnimals = new javax.swing.JButton();
         buttonEditDomestic = new javax.swing.JButton();
-        buttonEditSavages = new javax.swing.JButton();
         buttonEditMinors = new javax.swing.JButton();
+        buttonBack = new javax.swing.JButton();
+        buttonEditSavages = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel1.setText("CONTROL DE ANIMALES");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 259, 55));
+
+        buttonEditAnimals.setBackground(new java.awt.Color(0, 0, 102));
+        buttonEditAnimals.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 16)); // NOI18N
+        buttonEditAnimals.setForeground(new java.awt.Color(255, 255, 255));
         buttonEditAnimals.setText("Ver Animales");
+        buttonEditAnimals.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         buttonEditAnimals.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonEditAnimalsActionPerformed(evt);
             }
         });
+        jPanel1.add(buttonEditAnimals, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 322, 45));
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel1.setText("Control de Animales");
-
-        buttonBack.setText("Regresar");
-        buttonBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonBackActionPerformed(evt);
-            }
-        });
-
+        buttonEditDomestic.setBackground(new java.awt.Color(0, 0, 102));
+        buttonEditDomestic.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 16)); // NOI18N
+        buttonEditDomestic.setForeground(new java.awt.Color(255, 255, 255));
         buttonEditDomestic.setText("Editar Domesticos");
+        buttonEditDomestic.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         buttonEditDomestic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonEditDomesticActionPerformed(evt);
             }
         });
+        jPanel1.add(buttonEditDomestic, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 322, 45));
 
-        buttonEditSavages.setText("Editar Salvajes");
-        buttonEditSavages.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonEditSavagesActionPerformed(evt);
-            }
-        });
-
+        buttonEditMinors.setBackground(new java.awt.Color(0, 0, 102));
+        buttonEditMinors.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 16)); // NOI18N
+        buttonEditMinors.setForeground(new java.awt.Color(255, 255, 255));
         buttonEditMinors.setText("Editar Menores");
+        buttonEditMinors.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         buttonEditMinors.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonEditMinorsActionPerformed(evt);
             }
         });
+        jPanel1.add(buttonEditMinors, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 320, 50));
+
+        buttonBack.setBackground(new java.awt.Color(0, 0, 102));
+        buttonBack.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 16)); // NOI18N
+        buttonBack.setForeground(new java.awt.Color(255, 255, 255));
+        buttonBack.setText("Regresar");
+        buttonBack.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        buttonBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBackActionPerformed(evt);
+            }
+        });
+        jPanel1.add(buttonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 320, 50));
+
+        buttonEditSavages.setBackground(new java.awt.Color(0, 0, 102));
+        buttonEditSavages.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 16)); // NOI18N
+        buttonEditSavages.setForeground(new java.awt.Color(255, 255, 255));
+        buttonEditSavages.setText("Editar Salvajes");
+        buttonEditSavages.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        buttonEditSavages.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonEditSavagesActionPerformed(evt);
+            }
+        });
+        jPanel1.add(buttonEditSavages, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 320, 45));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(174, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(165, 165, 165))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(buttonEditAnimals, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                            .addComponent(buttonEditDomestic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buttonEditSavages, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buttonEditMinors, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(179, 179, 179))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(buttonBack)
-                        .addGap(202, 202, 202))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67)
-                .addComponent(buttonEditAnimals)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buttonEditDomestic)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buttonEditSavages)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buttonEditMinors)
-                .addGap(18, 18, 18)
-                .addComponent(buttonBack)
-                .addContainerGap(89, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
         );
 
         pack();
@@ -202,5 +209,6 @@ public class Animals_Control extends javax.swing.JFrame {
     private javax.swing.JButton buttonEditMinors;
     private javax.swing.JButton buttonEditSavages;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

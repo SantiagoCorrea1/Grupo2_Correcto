@@ -11,11 +11,13 @@ package control;
  */
 public class MainClass {
     
+    
+    //intanciamos las clases de información que pasaremos de una ventana a otra.
     private ArraysControl arraysControl = new ArraysControl();
     DptSales dptSales = new DptSales();
     DptLogistic dptLogistic =  new DptLogistic();
     DptAccounting dptAccounting = new DptAccounting();
-
+    
     public DptSales getDptSales() {
         return dptSales;
     }

@@ -39,111 +39,159 @@ public class Main_Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonAnimalControl = new javax.swing.JButton();
-        buttonPlansControl = new javax.swing.JButton();
-        buttonTicketsControl = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        buttonClose = new javax.swing.JButton();
-        buttonSouvenirControl = new javax.swing.JButton();
+        buttonAnimalControl = new javax.swing.JButton();
+        buttonTicketsControl = new javax.swing.JButton();
         buttonPassesContro = new javax.swing.JButton();
+        buttonPlansControl = new javax.swing.JButton();
+        buttonSouvenirControl = new javax.swing.JButton();
         buttonAccountingControl = new javax.swing.JButton();
+        buttonClose = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         setSize(new java.awt.Dimension(500, 400));
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel1.setText("MENÚ PRINCIPAL");
+
+        buttonAnimalControl.setBackground(new java.awt.Color(0, 0, 102));
+        buttonAnimalControl.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 15)); // NOI18N
+        buttonAnimalControl.setForeground(new java.awt.Color(255, 255, 255));
         buttonAnimalControl.setText("Gestionar Animales");
+        buttonAnimalControl.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         buttonAnimalControl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonAnimalControlActionPerformed(evt);
             }
         });
 
-        buttonPlansControl.setText("Gestionar Planes");
-        buttonPlansControl.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonPlansControlActionPerformed(evt);
-            }
-        });
-
+        buttonTicketsControl.setBackground(new java.awt.Color(0, 0, 102));
+        buttonTicketsControl.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 15)); // NOI18N
+        buttonTicketsControl.setForeground(new java.awt.Color(255, 255, 255));
         buttonTicketsControl.setText("Gestionar boletas");
+        buttonTicketsControl.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         buttonTicketsControl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonTicketsControlActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel1.setText("Menú Principal");
-
-        buttonClose.setText("Salir");
-        buttonClose.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonCloseActionPerformed(evt);
-            }
-        });
-
-        buttonSouvenirControl.setText("Gestionar Souvenirs");
-        buttonSouvenirControl.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonSouvenirControlActionPerformed(evt);
-            }
-        });
-
+        buttonPassesContro.setBackground(new java.awt.Color(0, 0, 102));
+        buttonPassesContro.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 15)); // NOI18N
+        buttonPassesContro.setForeground(new java.awt.Color(255, 255, 255));
         buttonPassesContro.setText("Gestionar Abonos");
+        buttonPassesContro.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         buttonPassesContro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonPassesControActionPerformed(evt);
             }
         });
 
+        buttonPlansControl.setBackground(new java.awt.Color(0, 0, 102));
+        buttonPlansControl.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 15)); // NOI18N
+        buttonPlansControl.setForeground(new java.awt.Color(255, 255, 255));
+        buttonPlansControl.setText("Gestionar Planes");
+        buttonPlansControl.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        buttonPlansControl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonPlansControlActionPerformed(evt);
+            }
+        });
+
+        buttonSouvenirControl.setBackground(new java.awt.Color(0, 0, 102));
+        buttonSouvenirControl.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 15)); // NOI18N
+        buttonSouvenirControl.setForeground(new java.awt.Color(255, 255, 255));
+        buttonSouvenirControl.setText("Gestionar Souvenirs");
+        buttonSouvenirControl.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        buttonSouvenirControl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSouvenirControlActionPerformed(evt);
+            }
+        });
+
+        buttonAccountingControl.setBackground(new java.awt.Color(0, 0, 102));
+        buttonAccountingControl.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 15)); // NOI18N
+        buttonAccountingControl.setForeground(new java.awt.Color(255, 255, 255));
         buttonAccountingControl.setText("Gestionar Contabilidad");
+        buttonAccountingControl.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         buttonAccountingControl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonAccountingControlActionPerformed(evt);
             }
         });
 
+        buttonClose.setBackground(new java.awt.Color(0, 0, 102));
+        buttonClose.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 15)); // NOI18N
+        buttonClose.setForeground(new java.awt.Color(255, 255, 255));
+        buttonClose.setText("Salir");
+        buttonClose.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        buttonClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCloseActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(233, 233, 233)
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonPlansControl, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonAnimalControl, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(buttonClose, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonTicketsControl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonSouvenirControl, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(buttonPassesContro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonAccountingControl, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonAnimalControl, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonTicketsControl, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonPassesContro, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonPlansControl, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonSouvenirControl, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonAccountingControl, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48)
+                .addComponent(buttonClose, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(64, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(175, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(buttonAccountingControl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(buttonClose, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel1))
-                    .addComponent(buttonPassesContro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonSouvenirControl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonTicketsControl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonPlansControl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonAnimalControl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(184, 184, 184))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(buttonAnimalControl)
-                .addGap(18, 18, 18)
-                .addComponent(buttonPlansControl)
-                .addGap(18, 18, 18)
-                .addComponent(buttonTicketsControl)
-                .addGap(18, 18, 18)
-                .addComponent(buttonSouvenirControl)
-                .addGap(18, 18, 18)
-                .addComponent(buttonPassesContro)
-                .addGap(18, 18, 18)
-                .addComponent(buttonAccountingControl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(buttonClose)
-                .addGap(21, 21, 21))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -191,7 +239,7 @@ public class Main_Menu extends javax.swing.JFrame {
 
     private void buttonAccountingControlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAccountingControlActionPerformed
         // TODO add your handling code here:
-        Accounting_Control accounting_Control = new Accounting_Control();
+        Accounting_Control accounting_Control = new Accounting_Control(mainClass);
         accounting_Control.setVisible(true);
         dispose();
     }//GEN-LAST:event_buttonAccountingControlActionPerformed
@@ -240,5 +288,6 @@ public class Main_Menu extends javax.swing.JFrame {
     private javax.swing.JButton buttonSouvenirControl;
     private javax.swing.JButton buttonTicketsControl;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

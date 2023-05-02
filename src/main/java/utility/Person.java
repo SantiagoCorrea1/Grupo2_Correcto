@@ -5,6 +5,9 @@
  */
 package utility;
 
+import java.time.LocalDate;
+import java.time.Period;
+
 /**
  *
  * @author SANTIAGO
@@ -12,6 +15,7 @@ package utility;
 public class Person {
      private String name;
     private String id;
+    private LocalDate birthday;
     private int age;
     private String type;
     private boolean pass;
@@ -20,10 +24,11 @@ public class Person {
     public Person() {
     }
 
-    public Person(String name, String id, int age, String type, boolean pass, int amountTimes) {
+    public Person(String name, String id,LocalDate birthday, String type, boolean pass, int amountTimes) {
         this.name = name;
         this.id = id;
-        this.age = age;
+        this.birthday = birthday;
+        this.age =calculateAge(birthday);
         this.type = type;
         this.pass = pass;
         this.amountTimes = amountTimes;
@@ -112,6 +117,12 @@ public class Person {
     public void setAmountTimes(int amountTimes) {
         this.amountTimes = amountTimes;
     }
+    
+     private int calculateAge(LocalDate birthday1) {
+    LocalDate now = LocalDate.now();
+    Period period = Period.between(birthday, now);
+    return period.getYears();
+}
 
     @Override
     public String toString() {

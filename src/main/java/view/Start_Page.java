@@ -37,56 +37,51 @@ public class Start_Page extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         buttonStart = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel1.setText("Bienvenido al zoológico XXXXXX");
-
+        buttonStart.setBackground(new java.awt.Color(0, 0, 102));
+        buttonStart.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 18)); // NOI18N
+        buttonStart.setForeground(new java.awt.Color(255, 255, 255));
         buttonStart.setText("Iniciar");
+        buttonStart.setAlignmentY(0.0F);
+        buttonStart.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        buttonStart.setFocusPainted(false);
         buttonStart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonStartActionPerformed(evt);
             }
         });
+        jPanel1.add(buttonStart, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 128, 51));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(196, 196, 196)
-                        .addComponent(buttonStart)))
-                .addContainerGap(133, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
-                .addComponent(buttonStart)
-                .addGap(121, 121, 121))
-        );
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 24)); // NOI18N
+        jLabel1.setText("BIENVENIDO AL ZOOLÓGICO");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 320, 40));
+
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 24)); // NOI18N
+        jLabel3.setText("XXXXXX");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 100, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -94,8 +89,7 @@ public class Start_Page extends javax.swing.JFrame {
 
     private void buttonStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonStartActionPerformed
             // TODO add your handling code here:
-            //DptLogistic dptLogistic = new DptLogistic();
-            //DptSales dptSales = new DptSales();
+            //definimos todos los valores por defecto que vamos a usar
             MainClass mainClass = new MainClass();
             DomesticAnimal domesticAnimal = new DomesticAnimal("canino", "alto", "001", "firulais", "20 kg", "domestico");
             SavageAnimal savageAnimal = new SavageAnimal("medio", "nevados", "pinguino", "002", "pingui", "18 kg", "salvaje");
@@ -106,8 +100,9 @@ public class Start_Page extends javax.swing.JFrame {
             Souvenir souvenir2 = new Souvenir("002", "oso de peluche de tigre", 35000);
             Pass pass1 = new Pass(100000, "001", 13);
             Pass pass2 = new Pass(80000, "002", 10);
-            Plan plan1 = new Plan("001", "extremo", 200000, "4 horas", "alimentar a los animales salvajes del zoo", "miercoles y viernes", "de 8am a 12pm", 3, 150000, true);
-            Plan plan2 = new Plan("002", "extremo", 100000, "4 horas", "alimentar a los animales salvajes del zoo", "miercoles y viernes", "de 8am a 12pm", 3, 150000, true);
+            Plan plan1 = new Plan("001", "extremo", 200000, "4 horas", "alimentar a los animales salvajes del zoo", "lunes", "de 8am a 12pm", 20, 150000, true, 0, 0, 0);
+            Plan plan2 = new Plan("002", "calmado", 100000, "4 horas", "alimentar a los animales salvajes del zoo", "viernes", "de 8am a 12pm", 80, 70000, false, 0, 0, 0);
+            Plan plan3 = new Plan("003", "normal", 170000, "4 horas", "alimentar a los animales salvajes del zoo", "miercoles", "de 8am a 12pm", 8, 140000, false, 0, 0, 0);
             mainClass.getDptLogistic().addDomesticAnimals(domesticAnimal);
             mainClass.getDptLogistic().addSavageAnimals(savageAnimal);
             mainClass.getDptLogistic().addMinorAnimals(minorAnimal);
@@ -119,6 +114,7 @@ public class Start_Page extends javax.swing.JFrame {
             mainClass.getDptSales().newPass(pass2);
             mainClass.getDptSales().newPlan(plan1);
             mainClass.getDptSales().newPlan(plan2);
+            mainClass.getDptSales().newPlan(plan3);
             Main_Menu main_Menu = new Main_Menu(mainClass);
             main_Menu.setVisible(true);
             dispose();
@@ -162,6 +158,7 @@ public class Start_Page extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonStart;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

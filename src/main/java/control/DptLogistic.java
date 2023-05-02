@@ -16,8 +16,7 @@ import static javax.swing.JOptionPane.showMessageDialog;
  * @author SANTIAGO
  */
 public class DptLogistic {
-    
-    ArraysControl arraysControl =  new ArraysControl();
+    public ArraysControl arraysControl =  new ArraysControl();
     
     //verificación existe en animal menor
     public boolean minorExists(String code){
@@ -237,8 +236,4 @@ public class DptLogistic {
                 showMessageDialog(null, "no se encontró el animal");
                         }
     }
-    
-    //interfaces de animales y métodos de actividades
-    //pdf
-    //
 }

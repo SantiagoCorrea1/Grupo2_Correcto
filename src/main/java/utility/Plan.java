@@ -18,13 +18,16 @@ public class Plan {
     private String days; //días que se puede
     private String hours; // horas en las que se realiza
     private int cantPeople; //cant personas que pueden particiapr por día
-    private double pricepass; // 
+    private double pricepass; // precio si la persona tiene abono
     private boolean souvenir; //incluye un souvenir
+    private int soldNormal; //cantidad vendidos a precio completo
+    private int soldDiscount; //cantidad vendidos con descuento
+    private double incomePlan; //cantidad de dinero ingresada por planes
 
     public Plan() {
     }
 
-    public Plan(String code, String name, double price, String duration, String description, String days, String hours, int cantPeople, double pricepass, boolean souvenir) {
+    public Plan(String code, String name, double price, String duration, String description, String days, String hours, int cantPeople, double pricepass, boolean souvenir, int soldNormal, int soldDiscount, double incomePlan) {
         this.code = code;
         this.name = name;
         this.price = price;
@@ -35,6 +38,9 @@ public class Plan {
         this.cantPeople = cantPeople;
         this.pricepass = pricepass;
         this.souvenir = souvenir;
+        this.soldNormal = 0;
+        this.soldDiscount = 0;
+        this.incomePlan = 0;
     }
 
     /**
@@ -180,18 +186,60 @@ public class Plan {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Plan{code=").append(code);
-        sb.append(", name=").append(name);
-        sb.append(", price=").append(price);
-        sb.append(", duration=").append(duration);
-        sb.append(", description=").append(description);
-        sb.append(", days=").append(days);
-        sb.append(", hours=").append(hours);
-        sb.append(", cantPeople=").append(cantPeople);
-        sb.append(", pricepass=").append(pricepass);
-        sb.append(", souvenir=").append(souvenir);
+        sb.append("Plan{code=").append(getCode());
+        sb.append(", name=").append(getName());
+        sb.append(", price=").append(getPrice());
+        sb.append(", duration=").append(getDuration());
+        sb.append(", description=").append(getDescription());
+        sb.append(", days=").append(getDays());
+        sb.append(", hours=").append(getHours());
+        sb.append(", cantPeople=").append(getCantPeople());
+        sb.append(", pricepass=").append(getPricepass());
+        sb.append(", souvenir=").append(isSouvenir());
         sb.append('}');
         return sb.toString();
+    }
+
+    /**
+     * @return the soldNormal
+     */
+    public int getSoldNormal() {
+        return soldNormal;
+    }
+
+    /**
+     * @param soldNormal the soldNormal to set
+     */
+    public void setSoldNormal(int soldNormal) {
+        this.soldNormal = soldNormal;
+    }
+
+    /**
+     * @return the soldDiscount
+     */
+    public int getSoldDiscount() {
+        return soldDiscount;
+    }
+
+    /**
+     * @param soldDiscount the soldDiscount to set
+     */
+    public void setSoldDiscount(int soldDiscount) {
+        this.soldDiscount = soldDiscount;
+    }
+
+    /**
+     * @return the incomePlan
+     */
+    public double getIncomePlan() {
+        return incomePlan;
+    }
+
+    /**
+     * @param incomePlan the incomePlan to set
+     */
+    public void setIncomePlan(double incomePlan) {
+        this.incomePlan = incomePlan;
     }
 
     

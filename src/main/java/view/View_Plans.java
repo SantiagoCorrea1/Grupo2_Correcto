@@ -5,8 +5,12 @@
  */
 package view;
 import control.MainClass;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Calendar;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
+import javax.swing.table.DefaultTableModel;
 import utility.Person;
 import utility.Plan;
 /**
@@ -15,9 +19,9 @@ import utility.Plan;
  */
 public class View_Plans extends javax.swing.JFrame {
     MainClass mainClass;
-    int amount;
-    double income;
     double price;
+    String code;
+    boolean pass;
     /**
      * Creates new form View_Passes
      */
@@ -31,8 +35,39 @@ public class View_Plans extends javax.swing.JFrame {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    public String WeekDay(){
+        String dayStr = "";
+        LocalDate dateToday =  LocalDate.now();
+        Calendar c = Calendar.getInstance();
+        int dayInt =  dateToday.getDayOfWeek().getValue();
+        switch(dayInt){
+            case 1: 
+                dayStr = "lunes";
+                break;
+            case 2:
+                dayStr = "martes";
+                break;
+            case 3:
+                dayStr = "miercoles";
+                break;
+            case 4:
+                dayStr = "jueves";
+                break;
+            case 5:
+                dayStr = "viernes";
+                break;
+            case 6:
+                dayStr = "sabados";
+                break;
+            case 7:
+                dayStr = "domingos";
+                break;
+        }
+        return dayStr;
+    }
+    
     public void setNull(){
-        boxAge.setText("");
+        dateChooser.setDate(null);
         boxCode.setText("");
         boxId.setText("");
         boxName.setText("");
@@ -47,92 +82,69 @@ public class View_Plans extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonBack = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel5 = new javax.swing.JLabel();
+        buttonVerification = new javax.swing.JButton();
+        buttonCancel = new javax.swing.JButton();
+        buttonAdd = new javax.swing.JButton();
+        buttonEnd = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        boxBill = new javax.swing.JTextArea();
+        buttonBack = new javax.swing.JButton();
+        boxName = new javax.swing.JTextField();
+        buttonSell = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
+        dateChooser = new com.toedter.calendar.JDateChooser();
         boxId = new javax.swing.JTextField();
         boxCode = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         listType = new javax.swing.JComboBox<>();
-        boxAge = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        buttonVerification = new javax.swing.JButton();
-        buttonCancel = new javax.swing.JButton();
-        buttonAdd = new javax.swing.JButton();
-        buttonEnd = new javax.swing.JButton();
-        boxName = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        boxBill = new javax.swing.JTextArea();
-        buttonSell = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        buttonBack.setText("Regresar");
-        buttonBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonBackActionPerformed(evt);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
             }
         });
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel5.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel5.setText("Ver Planes");
+
+        jTable1.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Código", "Nombre", "Precio", "Cant personas", "Duración", "Dias", "Horas", "Descripción", "Souvenir", "Precio pase "
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel5.setText("Ver Planes");
-
-        jLabel10.setText("tipo");
-
-        boxId.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                boxIdKeyTyped(evt);
-            }
-        });
-
-        boxCode.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                boxCodeKeyTyped(evt);
-            }
-        });
-
-        jLabel3.setText("code");
-
-        jLabel4.setText("nombre");
-
-        jLabel9.setText("edad");
-
-        listType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "seleccionar", "trabajador", "estudiante", "ninguno" }));
-        listType.setEnabled(false);
-
-        boxAge.setEnabled(false);
-        boxAge.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                boxAgeKeyTyped(evt);
-            }
-        });
-
-        jLabel6.setText("id");
-
-        buttonVerification.setText("verificar");
+        buttonVerification.setBackground(new java.awt.Color(0, 0, 102));
+        buttonVerification.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        buttonVerification.setForeground(new java.awt.Color(255, 255, 255));
+        buttonVerification.setText("Verificar");
         buttonVerification.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonVerificationActionPerformed(evt);
             }
         });
 
+        buttonCancel.setBackground(new java.awt.Color(0, 0, 102));
+        buttonCancel.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        buttonCancel.setForeground(new java.awt.Color(255, 255, 255));
         buttonCancel.setText("Cancelar");
         buttonCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,32 +152,58 @@ public class View_Plans extends javax.swing.JFrame {
             }
         });
 
-        buttonAdd.setText("agregar");
+        buttonAdd.setBackground(new java.awt.Color(0, 0, 102));
+        buttonAdd.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        buttonAdd.setForeground(new java.awt.Color(255, 255, 255));
+        buttonAdd.setText("Agregar");
         buttonAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonAddActionPerformed(evt);
             }
         });
 
-        buttonEnd.setText("terminar");
+        buttonEnd.setBackground(new java.awt.Color(0, 0, 102));
+        buttonEnd.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        buttonEnd.setForeground(new java.awt.Color(255, 255, 255));
+        buttonEnd.setText("Terminar");
+        buttonEnd.setEnabled(false);
         buttonEnd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonEndActionPerformed(evt);
             }
         });
 
+        boxBill.setEditable(false);
+        boxBill.setColumns(20);
+        boxBill.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 12)); // NOI18N
+        boxBill.setRows(5);
+        jScrollPane2.setViewportView(boxBill);
+
+        buttonBack.setBackground(new java.awt.Color(0, 0, 102));
+        buttonBack.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        buttonBack.setForeground(new java.awt.Color(255, 255, 255));
+        buttonBack.setText("Regresar");
+        buttonBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBackActionPerformed(evt);
+            }
+        });
+
         boxName.setEnabled(false);
+        boxName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxNameActionPerformed(evt);
+            }
+        });
         boxName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 boxNameKeyTyped(evt);
             }
         });
 
-        boxBill.setEditable(false);
-        boxBill.setColumns(20);
-        boxBill.setRows(5);
-        jScrollPane2.setViewportView(boxBill);
-
+        buttonSell.setBackground(new java.awt.Color(0, 0, 102));
+        buttonSell.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        buttonSell.setForeground(new java.awt.Color(255, 255, 255));
         buttonSell.setText("Vender");
         buttonSell.setEnabled(false);
         buttonSell.addActionListener(new java.awt.event.ActionListener() {
@@ -174,105 +212,179 @@ public class View_Plans extends javax.swing.JFrame {
             }
         });
 
+        jLabel10.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 12)); // NOI18N
+        jLabel10.setText("Tipo:");
+
+        dateChooser.setDateFormatString("dd/MM/y");
+        dateChooser.setEnabled(false);
+
+        boxId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxIdKeyTyped(evt);
+            }
+        });
+
+        boxCode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxCodeActionPerformed(evt);
+            }
+        });
+        boxCode.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                boxCodeKeyTyped(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 12)); // NOI18N
+        jLabel3.setText("Code:");
+
+        jLabel4.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 12)); // NOI18N
+        jLabel4.setText("Nombre:");
+
+        jLabel9.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 12)); // NOI18N
+        jLabel9.setText("Fecha de nacimiento:");
+
+        listType.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 12)); // NOI18N
+        listType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "seleccionar", "trabajador", "estudiante", "ninguno" }));
+        listType.setEnabled(false);
+        listType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listTypeActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 12)); // NOI18N
+        jLabel6.setText("Id:");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(379, 379, 379)
+                        .addComponent(jLabel5))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 738, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel4))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(boxId, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(boxCode, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(boxName, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addComponent(jLabel9))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel10)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addComponent(listType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(561, 561, 561))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(dateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(108, 108, 108)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(buttonAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(buttonEnd)
+                                    .addComponent(buttonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(buttonVerification, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(34, 34, 34)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(buttonBack)))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(buttonSell)
+                                .addGap(0, 0, Short.MAX_VALUE))))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(53, 53, 53)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel6)
+                                            .addComponent(boxId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(boxCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel3)
+                                            .addComponent(buttonVerification))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(buttonAdd)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(buttonEnd)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(boxName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4))
+                                .addGap(15, 15, 15)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(buttonCancel)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel9)
+                                    .addComponent(dateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(listType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(buttonSell)
+                .addGap(9, 9, 9)
+                .addComponent(buttonBack)
+                .addGap(43, 43, 43))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(194, 194, 194)
-                        .addComponent(jLabel5)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
-                                .addComponent(boxName, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel10)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(listType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel9)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(boxAge, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(boxCode, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(18, 18, 18)
-                                .addComponent(boxId, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(59, 59, 59)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(buttonEnd)
-                            .addComponent(buttonAdd)
-                            .addComponent(buttonCancel)
-                            .addComponent(buttonVerification))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(19, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(buttonSell)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(buttonBack)
-                        .addGap(28, 28, 28))))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 6, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel3)
-                                .addComponent(boxCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel6)
-                                    .addComponent(boxId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(boxName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(boxAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(buttonVerification, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(11, 11, 11)
-                            .addComponent(buttonAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(buttonEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(buttonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(listType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonBack)
-                    .addComponent(buttonSell, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
@@ -280,12 +392,10 @@ public class View_Plans extends javax.swing.JFrame {
 
     private void buttonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBackActionPerformed
         // TODO add your handling code here:
-         Plans_Control plans_Control = new Plans_Control(mainClass);
+        Plans_Control plans_Control = new Plans_Control(mainClass);
         plans_Control.setVisible(true);
         dispose();
         setNull();
-        income = 0;
-        amount = 0;
         price = 0;
         boxBill.setText("");
     }//GEN-LAST:event_buttonBackActionPerformed
@@ -295,68 +405,83 @@ public class View_Plans extends javax.swing.JFrame {
         if (boxCode.getText().equals("") ||boxId.getText().equals("")) {
             showMessageDialog(null, "debe llenar todos los campos");
         } else {
-            if (mainClass.getDptSales().planExits(boxCode.getText())) {
-                if (mainClass.getDptSales().personExits(boxId.getText())) {
-                    Person person = mainClass.getDptSales().returnPerson(boxId.getText());
-                    Plan plan = mainClass.getDptSales().returnPlan(boxCode.getText());
-                    int Localamount = person.getAmountTimes() + 1;
-                    person.setAmountTimes(Localamount);
-                    price = plan.getPrice();
-                    income = income +  price;
-                    boxBill.append("code: " + plan.getCode() + " cant: " + 1 + "\n");
+            //verifica si el plan está disponible para ese día
+            if (WeekDay().equals(mainClass.getDptSales().returnPlan(boxCode.getText()).getDays())) {
+                if (mainClass.getDptSales().planExits(boxCode.getText())) {
+                    if (mainClass.getDptSales().personExits(boxId.getText())) {
+                        pass = false;
+                        Person person = mainClass.getDptSales().returnPerson(boxId.getText());
+                        Plan plan = mainClass.getDptSales().returnPlan(boxCode.getText());
+                        code = boxCode.getText();
+                        pass = person.isPass();
+                        int Localamount = person.getAmountTimes() + 1;
+                        person.setAmountTimes(Localamount);
+                        if (pass == true) {
+                            price = plan.getPricepass();
+                        } else {
+                            price = plan.getPrice();
+                        }
+                        boxBill.append("code: " + plan.getCode() + " cant: " + 1 + "\n");
+                        buttonVerification.setEnabled(false);
+                        buttonEnd.setEnabled(true);
+                    } else {
+                        dateChooser.setEnabled(true);
+                        boxName.setEnabled(true);
+                        listType.setEnabled(true);
+                        boxCode.setEnabled(false);
+                        boxId.setEnabled(false);
+                        buttonVerification.setEnabled(false);
+                        buttonAdd.setEnabled(true);
+                    }
                 } else {
-                    boxAge.setEnabled(true);
-                    boxName.setEnabled(true);
-                    listType.setEnabled(true);
-                    boxCode.setEnabled(false);
-                    boxId.setEnabled(false);
-                    buttonVerification.setEnabled(false);
+                    showMessageDialog(null, "el plan no existe");
                 }
-            } else {
-                showMessageDialog(null, "el plan no existe");
-            }
+            }else {
+                showMessageDialog(null, "este plan no está disponible para este día");
+                }
         }
     }//GEN-LAST:event_buttonVerificationActionPerformed
 
     private void buttonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelActionPerformed
         // TODO add your handling code here:
         setNull();
-        amount = 0;
         price = 0;
-        income = 0;
         boxBill.setText("");
         boxCode.setEnabled(true);
         boxId.setEnabled(true);
         buttonAdd.setEnabled(true);
+        buttonEnd.setEnabled(false);
+        buttonSell.setEnabled(false);
         buttonVerification.setEnabled(true);
-        buttonEnd.setEnabled(true);
     }//GEN-LAST:event_buttonCancelActionPerformed
 
     private void buttonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAddActionPerformed
         // TODO add your handling code here:
-        if (boxAge.getText().equals("") || boxName.getText().equals("") || boxId.getText().equals("")) {
+        LocalDate birthday = dateChooser.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        if (dateChooser.getDate()== null|| boxName.getText().equals("") || boxId.getText().equals("")) {
             showMessageDialog(null, "debe llenar todos los campos");
         } else {
-            Person newPerson = new Person(boxName.getText(), boxId.getText(), Integer.parseInt(boxAge.getText()), listType.getSelectedItem() + "", true, 0);
-            mainClass.getDptSales().getArraysControl().getPersons().add(newPerson);
             Plan plan= mainClass.getDptSales().returnPlan(boxCode.getText());
+            Person newPerson = new Person(boxName.getText(), boxId.getText(), birthday, listType.getSelectedItem() + "", true, 0);
+            mainClass.getDptSales().getArraysControl().getPersons().add(newPerson);
+            code = boxCode.getText();
             price = plan.getPrice();
-            income = income +  price;
             boxBill.append("code: " + plan.getCode() + " cant: " + 1 + "\n");
+            buttonEnd.setEnabled(true);
+            
         }
-        amount ++;
         setNull();
-        boxAge.setEnabled(false);
+        dateChooser.setEnabled(false);
         boxName.setEnabled(false);
         listType.setEnabled(false);
         boxCode.setEnabled(true);
         boxId.setEnabled(true);
-        buttonVerification.setEnabled(true);
+        buttonAdd.setEnabled(false);
     }//GEN-LAST:event_buttonAddActionPerformed
 
     private void buttonEndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEndActionPerformed
         // TODO add your handling code here:
-        boxBill.append("total: " + income);
+        boxBill.append("total: " + price);
         setNull();
         boxCode.setEnabled(false);
         boxId.setEnabled(false);
@@ -368,15 +493,15 @@ public class View_Plans extends javax.swing.JFrame {
 
     private void buttonSellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSellActionPerformed
         // TODO add your handling code here:
-        mainClass.getDptSales().sellPlan(income, amount);
+        System.out.println(code);
+        mainClass.getDptSales().sellPlan(price, code, pass);
         setNull();
         boxBill.setText("");
         boxCode.setEnabled(true);
         boxId.setEnabled(true);
-        buttonAdd.setEnabled(true);
         buttonVerification.setEnabled(true);
-        buttonEnd.setEnabled(true);
         buttonSell.setEnabled(false);
+        code = "";
     }//GEN-LAST:event_buttonSellActionPerformed
 
     private void boxNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxNameKeyTyped
@@ -421,18 +546,35 @@ public class View_Plans extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_boxIdKeyTyped
 
-    private void boxAgeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_boxAgeKeyTyped
+    private void boxNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxNameActionPerformed
         // TODO add your handling code here:
-        int key = evt.getKeyChar();
+    }//GEN-LAST:event_boxNameActionPerformed
 
-        boolean numeros = key >= 48 && key <= 57;
-        boolean backSpace = key == 8;
-        
-        if (!(numeros||backSpace)){
-           evt.consume();
-           JOptionPane.showMessageDialog(this, "Ingrese solo carácteres Numéricos");
-        }
-    }//GEN-LAST:event_boxAgeKeyTyped
+    private void listTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listTypeActionPerformed
+
+    private void boxCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxCodeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boxCodeActionPerformed
+     private void loadPlansToTable() {
+     // Obtener el modelo de datos de la tabla jTable1
+    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+    // Limpiar la tabla antes de cargar los datos
+    model.setRowCount(0);
+
+    // Recorrer la lista de planes y agregarlos a la tabla
+    for (Plan plan : mainClass.getDptSales().arraysControl.getPlans()) {
+        Object[] newRow = {plan.getCode(), plan.getName(), plan.getPrice(),plan.getCantPeople(),plan.getDuration(), plan.getDays(),plan.getHours(), plan.getDescription(),plan.isSouvenir(), plan.getPricepass()};
+        model.addRow(newRow);
+    }
+    
+}
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        loadPlansToTable();
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
@@ -471,7 +613,6 @@ public class View_Plans extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField boxAge;
     private javax.swing.JTextArea boxBill;
     private javax.swing.JTextField boxCode;
     private javax.swing.JTextField boxId;
@@ -482,12 +623,14 @@ public class View_Plans extends javax.swing.JFrame {
     private javax.swing.JButton buttonEnd;
     private javax.swing.JButton buttonSell;
     private javax.swing.JButton buttonVerification;
+    private com.toedter.calendar.JDateChooser dateChooser;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;

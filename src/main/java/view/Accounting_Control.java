@@ -4,17 +4,27 @@
  * and open the template in the editor.
  */
 package view;
+import control.MainClass;
+import com.itextpdf.text.*;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 /**
  *
  * @author SANTIAGO
  */
 public class Accounting_Control extends javax.swing.JFrame {
+    MainClass mainClass;
     /**
      * Creates new form Accounting_Control
      */
-    public Accounting_Control() {
+    public Accounting_Control(MainClass mainClass) {
         initComponents();
+        setLocationRelativeTo(this);
+        this.mainClass =  mainClass;
+    }
+
+    private Accounting_Control() {
+        
     }
 
     /**
@@ -27,13 +37,46 @@ public class Accounting_Control extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonBack = new javax.swing.JButton();
+        buttonDoAccounting = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        buttonShowAccounting = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        buttonBack.setBackground(new java.awt.Color(0, 0, 102));
+        buttonBack.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 15)); // NOI18N
+        buttonBack.setForeground(new java.awt.Color(255, 255, 255));
         buttonBack.setText("Regresar");
+        buttonBack.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         buttonBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonBackActionPerformed(evt);
+            }
+        });
+
+        buttonDoAccounting.setBackground(new java.awt.Color(0, 0, 102));
+        buttonDoAccounting.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 15)); // NOI18N
+        buttonDoAccounting.setForeground(new java.awt.Color(255, 255, 255));
+        buttonDoAccounting.setText("Realizar contabilidad");
+        buttonDoAccounting.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        buttonDoAccounting.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonDoAccountingActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel5.setText("Contabilidad");
+
+        buttonShowAccounting.setBackground(new java.awt.Color(0, 0, 102));
+        buttonShowAccounting.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 15)); // NOI18N
+        buttonShowAccounting.setForeground(new java.awt.Color(255, 255, 255));
+        buttonShowAccounting.setText("Mostrar contabilidad");
+        buttonShowAccounting.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        buttonShowAccounting.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonShowAccountingActionPerformed(evt);
             }
         });
 
@@ -41,17 +84,31 @@ public class Accounting_Control extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(394, Short.MAX_VALUE)
-                .addComponent(buttonBack)
-                .addGap(29, 29, 29))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(176, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(182, 182, 182))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(buttonShowAccounting, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonDoAccounting, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonBack, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(158, 158, 158))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(353, Short.MAX_VALUE)
-                .addComponent(buttonBack)
-                .addGap(24, 24, 24))
+                .addGap(45, 45, 45)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addComponent(buttonDoAccounting, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(buttonShowAccounting, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(buttonBack, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(71, 71, 71))
         );
 
         pack();
@@ -59,10 +116,21 @@ public class Accounting_Control extends javax.swing.JFrame {
 
     private void buttonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBackActionPerformed
         // TODO add your handling code here:
-        Main_Menu main_Menu =  new Main_Menu();
+        Main_Menu main_Menu = new Main_Menu(mainClass);
         main_Menu.setVisible(true);
         dispose();
     }//GEN-LAST:event_buttonBackActionPerformed
+
+    private void buttonDoAccountingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDoAccountingActionPerformed
+        // TODO add your handling code here:
+        mainClass.getDptAccounting().llevarCuentas(mainClass.getDptSales().getArraysControl());
+        showMessageDialog(null, "la contabilidad se ha realizado");
+    }//GEN-LAST:event_buttonDoAccountingActionPerformed
+
+    private void buttonShowAccountingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonShowAccountingActionPerformed
+        // TODO add your handling code here:
+        mainClass.getDptAccounting().showPDF();
+    }//GEN-LAST:event_buttonShowAccountingActionPerformed
 
     /**
      * @param args the command line arguments
@@ -101,5 +169,8 @@ public class Accounting_Control extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonBack;
+    private javax.swing.JButton buttonDoAccounting;
+    private javax.swing.JButton buttonShowAccounting;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }

@@ -23,6 +23,7 @@ import utility.Person;
  */
 public class ArraysControl {
     
+    //arrayLists que vamos a usar en este proyecto
     private ArrayList<Animal> animals = new ArrayList<>();
     private ArrayList<DomesticAnimal> domesticAnimals = new ArrayList<>();
     private ArrayList<MinorAnimal> minorAnimals = new ArrayList<>();

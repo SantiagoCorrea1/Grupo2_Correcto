@@ -18,7 +18,7 @@ import utility.Plan;
  */
 public class DptSales {
     private Accounting accounting = new Accounting();
-    private ArraysControl arraysControl = new ArraysControl();
+    public ArraysControl arraysControl = new ArraysControl();
     
     //verifica si existe el ticket
     public boolean ticketExits (String code){
@@ -91,7 +91,7 @@ public class DptSales {
         }
         return -1;
     }
-    
+    //verifica si el souvenir existe
     public boolean souvenirExits (String code){
         if (arraysControl.getSouvenirs().isEmpty() == false) {
             for (int i = 0; i < getArraysControl().getSouvenirs().size(); i++) {
@@ -115,6 +115,7 @@ public class DptSales {
         return null;
     }
     
+    //retorna el souvenir
     public int getPositionSouvenir (String code) {
         if (arraysControl.getSouvenirs().isEmpty() == false) {
             for (int i = 0; i < getArraysControl().getSouvenirs().size(); i++) {
@@ -126,6 +127,7 @@ public class DptSales {
         return -1;
     }
     
+    //verifica si la persona existe
     public boolean personExits (String code){
         if (arraysControl.getPersons().isEmpty() == false) {
             for (int i = 0; i < getArraysControl().getPersons().size(); i++) {
@@ -149,6 +151,7 @@ public class DptSales {
         return null;
     }
     
+    //verifica si el plan existe
     public boolean planExits (String code){
         if (arraysControl.getPlans().isEmpty() == false) {
             for (int i = 0; i < getArraysControl().getPlans().size(); i++) {
@@ -172,6 +175,7 @@ public class DptSales {
         return null;
     }
     
+    //retorna la posicion en el arrelgo de cada plan, si no existe retorna -1
     public int getPositionPlan (String code) {
         if (arraysControl.getPlans().isEmpty() == false) {
             for (int i = 0; i < getArraysControl().getPlans().size(); i++) {
@@ -183,14 +187,12 @@ public class DptSales {
         return -1;
     }
     
-    public void sellPlan() {
-    
-    }
-    
+    //agrefa tickets
     public void newTicket(Ticket t) {
         getArraysControl().getTickets().add(t);
     }
     
+    //edita los campos editables del ticket
     public void editTicket (String code, Ticket t) {
         if (ticketExits(code)) {
             Ticket b = returnTicket(code);
@@ -202,6 +204,7 @@ public class DptSales {
                 }
     }
     
+    //cancela el ticket
     public void cancelTicket(String code){
         
         if (ticketExits(code)) {
@@ -214,11 +217,13 @@ public class DptSales {
             }
     }
     
+    //agrega un nuevo souvenir
      public void newSouvenir(Souvenir s) {
         getArraysControl().getSouvenirs().add(s);
             
     }
     
+     //edita los campos editables del souvenir
     public void editSouvenir (String code, Souvenir s) {
         if (souvenirExits(code)) {
            Souvenir b = returnSouvenir(code);
@@ -230,6 +235,7 @@ public class DptSales {
                 }
     }
     
+    //cancela el souvenir
     public void cancelSouvenir(String code){
         if (souvenirExits(code)) {
             if (getPositionSouvenir(code) != -1) {
@@ -241,11 +247,13 @@ public class DptSales {
         }
     }
     
+    //agrega un nuevo abono
     public void newPass(Pass p) {
         getArraysControl().getPasses().add(p);
             
     }
     
+   //edita los campos editables de los abonos
     public void editPass (String code, Pass p) {
         if (passExits(code)) {
             Pass b = returnPass(code);
@@ -257,6 +265,7 @@ public class DptSales {
                 }
     }
     
+    //cancela un abono
     public void cancelPass(String code){
         if (passExits(code)) {
             if (getPositionPass(code) != -1) {
@@ -268,10 +277,12 @@ public class DptSales {
         }
     }
     
-     public void newPlan(Plan p) {
+    //agrega un nuevo plan
+    public void newPlan(Plan p) {
         getArraysControl().getPlans().add(p);
     }
     
+    //edita los campos editables de los planes
     public void editPlan (String code, Plan p) {
         if (planExits(code)) {
             Plan b = returnPlan(code);
@@ -291,6 +302,7 @@ public class DptSales {
                 }
     }
     
+    //cancela un plan
     public void cancelPlan(String code){
         if (planExits(code)) {
             if (getPositionPlan(code) != -1) {
@@ -302,6 +314,7 @@ public class DptSales {
             }
     }
     
+    //vende un tiquete
     public void sellTicket(double income, int amount){ 
         double currentIncome = accounting.getIncome();
         int currentSold = accounting.getTickets_sold();
@@ -312,6 +325,7 @@ public class DptSales {
         showMessageDialog(null, "se han vendido correctamente las boletas");
     }
 
+    //vende un souvenir
     public void sellSouvenir(double income, int amount){
             int currentSold = accounting.getSouvenirs_sold();
             double currentIncome = accounting.getIncome();
@@ -322,6 +336,7 @@ public class DptSales {
             showMessageDialog(null, "se han vendido correctamente las souvenir");
     }
     
+    //vende un abono
      public void sellPass(double income, int amount) {
         int currentSold = accounting.getPasses_sold();
         double currentIncome = accounting.getIncome();
@@ -332,14 +347,37 @@ public class DptSales {
         showMessageDialog(null, "se han vendido correctamente las abonos");
     }
      
-    public void sellPlan(double income, int amount) {
-        int currentSold = accounting.getPlans_sold();
-        double currentIncome = accounting.getIncome();
-        currentSold = currentSold + amount;
-        currentIncome = currentIncome + income;
-        accounting.setPlans_sold(currentSold);
-        accounting.setIncome(currentIncome);
-        showMessageDialog(null, "se han vendido correctamente las abonos");
+    //vende un plan, si la persona tiene un abono se le cobrará el precio defnido con descuento 
+    public void sellPlan(double income, String code, boolean pass) {
+        Plan plan = returnPlan(code);
+        int thisSold;
+        int cantPeople;
+        double currentIncome;
+        int currentSold;
+        double currentIncomeThisPlan;
+        currentIncomeThisPlan = plan.getIncomePlan();
+        cantPeople = plan.getCantPeople()- 4;
+        if (cantPeople < 0) {
+            showMessageDialog(null, "no hay más cupos para este plan");
+        } else {
+            if (pass == false) {
+                thisSold = plan.getSoldNormal();
+                thisSold = thisSold + 1;
+                plan.setSoldNormal(thisSold);
+            } else {
+                thisSold = plan.getSoldDiscount();
+                thisSold = thisSold + 1;
+                plan.setSoldDiscount(thisSold);
+            }
+            currentSold = accounting.getPlans_sold() + 1;
+            currentIncome = accounting.getIncome() + income;
+            currentIncomeThisPlan = currentIncomeThisPlan + income;
+            plan.setCantPeople(cantPeople);
+            plan.setIncomePlan(currentIncomeThisPlan);
+            accounting.setPlans_sold(currentSold);
+            accounting.setIncome(currentIncome);
+            showMessageDialog(null, "se han vendido correctamente los planes");
+        }
     }
     /**
      * @return the arraysControl
